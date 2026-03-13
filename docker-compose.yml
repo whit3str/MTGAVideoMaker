@@ -1,0 +1,9 @@
+services:
+  mtgavideomaker:
+    image: ghcr.io/whit3str/mtgavideomaker:latest
+    container_name: mtgavideomaker
+    restart: unless-stopped
+    volumes:
+      - ./input/audio:/input/audio
+      - ./input/keyart:/input/keyart
+      - ./output:/output
