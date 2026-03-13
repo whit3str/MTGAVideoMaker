@@ -60,3 +60,13 @@ services:
       - ./input/audio:/input/audio
       - ./input/keyart:/input/keyart
       - ./output:/output
+
+---
+
+## ⚖️ Legal Disclaimer
+
+### 🇺🇸 English
+This project is unofficial Fan Content permitted under the Fan Content Policy. This tool is not approved or endorsed by Wizards. Portions of the materials used (audio and keyart) are property of Magic: The Gathering and Wizards of the Coast, LLC. © Wizards of the Coast LLC.
+
+### 🇫🇷 Français
+Ce projet est un contenu de fan non officiel autorisé dans le cadre de la Politique relative au contenu des fans. Cet outil n'est ni approuvé ni parrainé par Wizards. Une partie des matériaux utilisés (audio et images) est la propriété de Magic: The Gathering et de Wizards of the Coast, LLC. © Wizards of the Coast LLC.
