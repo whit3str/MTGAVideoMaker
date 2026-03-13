@@ -60,8 +60,7 @@ services:
       - ./input/audio:/input/audio
       - ./input/keyart:/input/keyart
       - ./output:/output
-
----
+```
 
 ## ⚖️ Legal Disclaimer
 
