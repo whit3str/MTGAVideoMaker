@@ -3,6 +3,8 @@ services:
     image: ghcr.io/whit3str/mtgavideomaker:latest
     container_name: mtgavideomaker
     restart: unless-stopped
+    environment:
+      - FADEOUT_TIME=1
     volumes:
       - ./input/audio:/input/audio
       - ./input/keyart:/input/keyart

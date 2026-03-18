@@ -23,6 +23,7 @@ The service relies on three volume mappings to manage the workflow:
 * `./input/audio`: Source folder for MP3 files.
 * `./input/keyart`: Source folder for PNG files.
 * `./output`: Destination for the final MP4 videos.
+* `FADEOUT_TIME`: Environment variable to set the fadeout duration in seconds (default: 1).
 
 ---
 
@@ -43,6 +44,7 @@ Le service s'appuie sur trois points de montage pour organiser le flux de travai
 * `./input/audio` : Dossier source des fichiers MP3.
 * `./input/keyart` : Dossier source des fichiers PNG.
 * `./output` : Destination des vidéos finales.
+* `FADEOUT_TIME` : Variable d'environnement pour définir la durée du fadeout en secondes (par défaut : 1).
 
 ---
 
@@ -56,6 +58,8 @@ services:
     image: ghcr.io/whit3str/mtgavideomaker:latest
     container_name: mtgavideomaker
     restart: unless-stopped
+    environment:
+      - FADEOUT_TIME=1
     volumes:
       - ./input/audio:/input/audio
       - ./input/keyart:/input/keyart
