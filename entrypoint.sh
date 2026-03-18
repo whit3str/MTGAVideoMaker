@@ -1,6 +1,9 @@
 #!/bin/bash
 echo "Starting MTG Arena watcher..."
 
+# Default fade-out time if not set
+FADEOUT_TIME=${FADEOUT_TIME:-1}
+
 while true; do
   # Loop through all .mp3 files in /input/audio
   for audio in /input/audio/*.mp3; do
@@ -17,12 +20,12 @@ while true; do
 
       # Get audio duration via ffprobe
       duration=$(ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$audio")
-      # Compute fade-out start time (duration - 1s)
-      fade_out=$(echo "$duration - 1" | bc)
+      # Compute fade-out start time (duration - FADEOUT_TIME)
+      fade_out=$(echo "$duration - $FADEOUT_TIME" | bc)
 
       # Encode the video
       ffmpeg -y -loop 1 -i "$image" -i "$audio" \
-        -vf "fade=t=in:st=0:d=1,fade=t=out:st=$fade_out:d=1" \
+        -vf "fade=t=in:st=0:d=1,fade=t=out:st=$fade_out:d=$FADEOUT_TIME" \
         -c:v libx264 -tune stillimage -pix_fmt yuv420p -c:a copy -shortest "$output"
       
       echo "Done: $filename.mp4"
