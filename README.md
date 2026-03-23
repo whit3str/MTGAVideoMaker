@@ -14,9 +14,9 @@ The goal is to transform in-game audio tracks into simple, ready-to-share videos
 ### Workflow
 The process is semi-automated to ensure high-quality output:
 1.  **Audio**: Manually extracted from the game client using **Wwise Unpacker** (not currently automatable as `.pck` files require specific extraction tools).
-2.  **Images**: Official Keyarts sourced from [Wizards WPN Marketing Materials](https://wpn.wizards.com/en/marketing-materials).
-3.  **Naming**: Files must share the same trigram (e.g., `TMT.mp3` and `TMT.png`).
-4.  **Automation**: Once files are dropped into their respective folders, the container detects the pair and generates the video in the output folder.
+2.  **Images**: Official Keyarts sourced from [Wizards WPN Marketing Materials](https://wpn.wizards.com/en/marketing-materials). Supported formats: `.png`, `.jpg`, `.jpeg`.
+3.  **Naming**: The script automatically extracts the 3-letter set code from Wwise audio file names (e.g., `BAT_ONE_hash_1.mp3` looks for `ONE.jpg`).
+4.  **Automation**: Once files are dropped, the container detects the pair and generates the video. Multiple tracks from the same extract are automatically numbered (e.g. `MTGArena OST - ONE 1_2.mp4`).
 
 ### Configuration
 The service relies on three volume mappings to manage the workflow:
@@ -35,9 +35,9 @@ L'objectif est de transformer les pistes sonores du jeu en vidéos simples prêt
 ### Workflow
 Le processus est semi-automatique pour garantir la meilleure qualité possible :
 1.  **Audio** : Extraits manuellement du client de jeu via **Wwise Unpacker** (actuellement non automatisable car les fichiers `.pck` nécessitent une extraction spécifique).
-2.  **Images** : Keyarts officiels téléchargés sur le site [WPN Wizards Marketing Materials](https://wpn.wizards.com/fr/marketing-materials).
-3.  **Nommage** : Les fichiers doivent partager le même trigramme d'extension (ex: `TMT.mp3` et `TMT.png`).
-4.  **Automatisation** : Une fois les fichiers déposés dans leurs dossiers respectifs, le conteneur détecte la paire et génère la vidéo dans le dossier de sortie.
+2.  **Images** : Keyarts officiels téléchargés sur le site [WPN Wizards Marketing Materials](https://wpn.wizards.com/fr/marketing-materials). Formats supportés : `.png`, `.jpg`, `.jpeg`.
+3.  **Nommage** : Le script extrait automatiquement le trigramme de l'extension depuis les fichiers audio Wwise (ex: `BAT_ONE_hash_1.mp3` cherchera l'image `ONE.jpg`).
+4.  **Automatisation** : Une fois les fichiers déposés, le conteneur détecte la paire et génère la vidéo. S'il y a plusieurs pistes pour une même extraction, les fichiers finaux seront automatiquement numérotés (ex: `MTGArena OST - ONE 1_2.mp4`).
 
 ### Configuration (FR)
 Le service s'appuie sur trois points de montage pour organiser le flux de travail :
